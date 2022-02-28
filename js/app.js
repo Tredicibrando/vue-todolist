@@ -5,19 +5,20 @@ const app = new Vue ({
     el: '#app',
     data:{
         message: '',
-        items: [{
-            text: this.message,
-            data: false,
-        }],
+        items: [],
     },
     methods:{
         addNewItem(){
             if(this.message === ''){
                 console.log('la stringa non contiene caratteri')
             } else {
-                this.items.push(this.message);
+                const NewItem = {
+                    text: this.message,
+                    data: false
+                }
+                this.items.push( NewItem );
                 this.message = '';
-                console.log(this.items,this.items.lenght)
+                console.log(this.items)
             }   
         },
 
