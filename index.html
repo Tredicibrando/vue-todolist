@@ -17,14 +17,14 @@
     <main id="app">
         <section class="container">
             <nav>
-                <input type="text" v-model="message" @keyup.enter="addNewItem">
+                <input type="text" v-model="message" @keyup.enter="addNewItem" placeholder="add new tasks">
                 <input type="button" value="add" @click="addNewItem">
             </nav>
 
             <ul>
-                <li v-for="(item,i) in items" class="shadow">
+                <li v-for="(item,i) in items" class="shadow" :class="(item.data === true)? '' : 'underline'">
                 {{ item.text }}
-                <i class="fa-solid fa-xmark" @click="removeNewItem(i)"></i>
+                <i class="fa-solid fa-xmark" @click.stop="removeNewItem(i)"></i>
                 </li>
 
                 <!-- <li class="shadow">
