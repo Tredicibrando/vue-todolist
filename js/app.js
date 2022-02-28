@@ -24,7 +24,16 @@ const app = new Vue ({
 
         removeNewItem(i){
             this.items.splice(i,1)
+        },
+
+        checkDone(i){
+            const done = this.items.data
+            if (done){
+                
+            }
         }
+
+
   
 
 
